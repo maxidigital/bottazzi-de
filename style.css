@@ -89,3 +89,45 @@ footer a { color: inherit; }
 .page p { margin: 0 0 1rem; }
 .page address { font-style: normal; margin: 0 0 1rem; }
 .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
+
+/* Contact form */
+.field { margin-bottom: 1.5rem; }
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.field input, .field textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+}
+.field input:focus, .field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.field textarea { resize: vertical; }
+.cf-turnstile { margin-bottom: 1.5rem; }
+button {
+  padding: 0.7rem 1.4rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--bg);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-feedback { margin-top: 1.25rem; font-weight: 600; }
+.form-feedback.error { color: var(--accent); }
+.page .form-note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
