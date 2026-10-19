@@ -33,7 +33,7 @@ body {
 .aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .aurora i { position: absolute; border-radius: 50%; filter: blur(120px); }
 .aurora i:nth-child(1) { top: -10rem; left: -10rem; width: 55vw; height: 55vw; background: color-mix(in oklab, var(--brand-1) 40%, transparent); animation: aurora1 22s ease-in-out infinite; }
-.aurora i:nth-child(2) { top: 33%; right: -8rem; width: 50vw; height: 50vw; background: color-mix(in oklab, var(--brand-4) 30%, transparent); animation: aurora2 28s ease-in-out infinite; }
+.aurora i:nth-child(2) { top: 33%; right: -8rem; width: 50vw; height: 50vw; background: color-mix(in oklab, var(--blob) 32%, transparent); animation: aurora2 28s ease-in-out infinite, warm 16s ease-in-out infinite alternate; }
 .aurora i:nth-child(3) { bottom: -10rem; left: 25%; width: 55vw; height: 55vw; background: color-mix(in oklab, var(--brand-3) 35%, transparent); filter: blur(140px); animation: aurora3 32s ease-in-out infinite; }
 .aurora i:nth-child(4) { top: 50%; left: 50%; width: 40vw; height: 40vw; background: color-mix(in oklab, var(--brand-2) 25%, transparent); filter: blur(140px); transform: translate(-50%, -50%); animation: aurora4 36s ease-in-out infinite; }
 .aurora::before {
@@ -53,6 +53,17 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+/* The purple blob slowly turns into a warm orange-yellow and back */
+@property --blob {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0.6 0.22 340);
+}
+@keyframes warm {
+  0%   { --blob: oklch(0.6 0.22 340); }   /* magenta */
+  50%  { --blob: oklch(0.7 0.2 40); }     /* orange */
+  100% { --blob: oklch(0.84 0.17 80); }   /* warm yellow */
 }
 @keyframes aurora1 {
   0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.85; }
@@ -260,6 +271,39 @@ h2 {
 .cta h2 { margin-bottom: 0.75rem; }
 .cta p { max-width: 36rem; margin: 0 auto; }
 .cta .actions { justify-content: center; }
+
+/* Contact form */
+.contact-form { max-width: 34rem; margin: 2.5rem auto 0; text-align: left; }
+.field { margin-bottom: 1.25rem; }
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.field input, .field textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: oklch(0.12 0.02 40 / 50%);
+  color: var(--fg);
+  font: inherit;
+}
+.field input:focus, .field textarea:focus {
+  outline: 2px solid color-mix(in oklab, var(--brand-2) 60%, transparent);
+  outline-offset: 1px;
+}
+.field textarea { resize: vertical; }
+.cf-turnstile { margin-bottom: 1.25rem; }
+.contact-form .btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+.contact-form .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-feedback { margin: 1.25rem 0 0 !important; font-weight: 600; }
+.form-feedback.success { color: var(--lime) !important; }
+.form-feedback.error { color: var(--brand-3) !important; }
 
 footer {
   border-top: 1px solid var(--line);
