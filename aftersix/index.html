@@ -98,22 +98,21 @@
             <input type="email" id="email" name="email" required maxlength="200" autocomplete="email">
           </div>
           <div class="field">
-            <label for="revenue">Monthly revenue</label>
-            <select id="revenue" name="revenue" required>
-              <option value="" selected disabled>Choose one</option>
-              <option>&lt;€10k</option>
-              <option>€10k–€50k</option>
-              <option>€50k+</option>
-            </select>
+            <label for="business">Type of business</label>
+            <input type="text" id="business" name="business" required maxlength="200" placeholder="e.g. clinic, physiotherapy, aesthetics, consulting">
           </div>
           <div class="field">
-            <label for="adspend">Monthly ad spend budget</label>
-            <select id="adspend" name="adspend" required>
+            <label for="channels">How do new clients find you today?</label>
+            <textarea id="channels" name="channels" required maxlength="2000" rows="2"></textarea>
+          </div>
+          <div class="field">
+            <label for="ads">Are you running ads today?</label>
+            <select id="ads" name="ads" required>
               <option value="" selected disabled>Choose one</option>
-              <option>&lt;€1k</option>
-              <option>€1k–€5k</option>
-              <option>€5k–€20k</option>
-              <option>€20k+</option>
+              <option>No</option>
+              <option>Yes, under €1k a month</option>
+              <option>Yes, over €1k a month</option>
+              <option>Not sure</option>
             </select>
           </div>
           <div class="field">
@@ -154,8 +153,9 @@
 
       const name    = form.elements.name.value.trim();
       const email   = form.elements.email.value.trim();
-      const revenue = form.elements.revenue.value;
-      const adspend = form.elements.adspend.value;
+      const business = form.elements.business.value.trim();
+      const channels = form.elements.channels.value.trim();
+      const ads      = form.elements.ads.value;
       const goal    = form.elements.goal.value.trim();
       const message = form.elements.message.value.trim();
       const token   = form.querySelector('[name="cf-turnstile-response"]')?.value;
@@ -179,8 +179,9 @@
             html: `
               <p><strong>Name:</strong> ${escapeHtml(name)}</p>
               <p><strong>E-mail:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-              <p><strong>Monthly revenue:</strong> ${escapeHtml(revenue)}</p>
-              <p><strong>Monthly ad spend budget:</strong> ${escapeHtml(adspend)}</p>
+              <p><strong>Type of business:</strong> ${escapeHtml(business)}</p>
+              <p><strong>How new clients find them:</strong><br>${escapeHtml(channels).replace(/\n/g, '<br>')}</p>
+              <p><strong>Running ads today:</strong> ${escapeHtml(ads)}</p>
               <p><strong>Primary goal (next 90 days):</strong><br>${escapeHtml(goal).replace(/\n/g, '<br>')}</p>
               <p><strong>Anything else:</strong><br>${escapeHtml(message || '—').replace(/\n/g, '<br>')}</p>
             `,
