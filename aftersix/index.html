@@ -10,121 +10,123 @@
   <link rel="stylesheet" href="/aftersix/style.css">
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-<body>
+<body data-title="title.home">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <header class="site-header">
-    <nav><a href="#system">The system</a><a href="#commitment">90 days</a><a href="#apply">Apply</a></nav>
+    <nav><a href="#system" data-i18n="nav.system">The system</a><a href="#commitment" data-i18n="nav.commitment">90 days</a><a href="#apply" data-i18n="nav.apply">Apply</a></nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="de">DE</button><button type="button" data-lang="en">EN</button></div>
+    <a class="login" href="/aftersix/login.html" data-i18n="nav.login">Log in</a>
   </header>
 
   <main>
     <div class="hero">
     <div class="hero-logo"><img src="/aftersix/logo.svg" alt="After Six — Digital Marketing" width="2880" height="848"></div>
-    <h1 class="claim">We Build Predictable Growth Engines for <span class="grad">Service Businesses &amp; Clinics.</span></h1>
-    <h2 class="lead">Your brand keeps working after six. We engineer your acquisition, conversion, and retention systems so you can focus 100% on your clients.</h2>
+    <h1 class="claim" data-i18n-html="hero.title">We Build Predictable Growth Engines for <span class="grad">Service Businesses &amp; Clinics.</span></h1>
+    <h2 class="lead" data-i18n="hero.subtitle">Your brand keeps working after six. We engineer your acquisition, conversion, and retention systems so you can focus 100% on your clients.</h2>
     <div class="actions">
-      <a class="btn primary" href="#apply">Apply for a Growth Audit</a>
-      <a class="btn ghost" href="#system">See the system</a>
+      <a class="btn primary" href="#apply" data-i18n="hero.cta">Apply for a Growth Audit</a>
+      <a class="btn ghost" href="#system" data-i18n="hero.secondary">See the system</a>
     </div>
     </div>
 
     <section id="system">
-      <h2>The 3-Layer Growth System</h2>
-      <p class="section-lead">Not a list of disconnected services: one integrated system where every layer feeds the next.</p>
+      <h2 data-i18n="system.title">The 3-Layer Growth System</h2>
+      <p class="section-lead" data-i18n="system.lead">Not a list of disconnected services: one integrated system where every layer feeds the next.</p>
       <div class="grid layers">
         <div class="card">
-          <p class="kicker">Layer 1</p>
-          <h3>Acquisition</h3>
+          <p class="kicker" data-i18n="layer1.kicker">Layer 1</p>
+          <h3 data-i18n="layer1.title">Acquisition</h3>
           <ul class="points">
-            <li>Paid ads on Meta &amp; Google</li>
-            <li>Retargeting</li>
-            <li>Traffic foundation</li>
+            <li data-i18n-html="layer1.a">Paid ads on Meta &amp; Google</li>
+            <li data-i18n="layer1.b">Retargeting</li>
+            <li data-i18n="layer1.c">Traffic foundation</li>
           </ul>
         </div>
         <div class="card">
-          <p class="kicker">Layer 2</p>
-          <h3>Conversion</h3>
+          <p class="kicker" data-i18n="layer2.kicker">Layer 2</p>
+          <h3 data-i18n="layer2.title">Conversion</h3>
           <ul class="points">
-            <li>Consultation funnels</li>
-            <li>High-converting landing pages</li>
-            <li>Irresistible offer engineering</li>
+            <li data-i18n="layer2.a">Consultation funnels</li>
+            <li data-i18n="layer2.b">High-converting landing pages</li>
+            <li data-i18n="layer2.c">Irresistible offer engineering</li>
           </ul>
         </div>
         <div class="card">
-          <p class="kicker">Layer 3</p>
-          <h3>Retention</h3>
+          <p class="kicker" data-i18n="layer3.kicker">Layer 3</p>
+          <h3 data-i18n="layer3.title">Retention</h3>
           <ul class="points">
-            <li>Appointment reminders &amp; follow-ups</li>
-            <li>Review requests that build your reputation</li>
-            <li>E-mail &amp; SMS reactivation flows</li>
+            <li data-i18n-html="layer3.a">Appointment reminders &amp; follow-ups</li>
+            <li data-i18n="layer3.b">Review requests that build your reputation</li>
+            <li data-i18n-html="layer3.c">E-mail &amp; SMS reactivation flows</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="commitment">
-      <h2>The 90-Day Scaling Commitment</h2>
-      <p class="section-lead">A predictable traffic and conversion engine isn't built in a few weeks. We start every partnership with a 90-day commitment: the time it takes to audit, optimise and scale your results, with clear goals and milestones agreed from day one.</p>
+      <h2 data-i18n="commit.title">The 90-Day Scaling Commitment</h2>
+      <p class="section-lead" data-i18n="commit.lead">A predictable traffic and conversion engine isn't built in a few weeks. We start every partnership with a 90-day commitment: the time it takes to audit, optimise and scale your results, with clear goals and milestones agreed from day one.</p>
       <div class="grid steps">
         <div class="card">
-          <p class="kicker">Days 1–30</p>
-          <h3>Audit</h3>
-          <p>We take apart your funnel, offer, ad accounts and data to find where growth is leaking.</p>
+          <p class="kicker" data-i18n="step1.kicker">Days 1–30</p>
+          <h3 data-i18n="step1.title">Audit</h3>
+          <p data-i18n="step1.text">We take apart your funnel, offer, ad accounts and data to find where growth is leaking.</p>
         </div>
         <div class="card">
-          <p class="kicker">Days 31–60</p>
-          <h3>Optimise</h3>
-          <p>We rebuild what holds you back and test offers, creatives and pages until the numbers hold.</p>
+          <p class="kicker" data-i18n="step2.kicker">Days 31–60</p>
+          <h3 data-i18n="step2.title">Optimise</h3>
+          <p data-i18n="step2.text">We rebuild what holds you back and test offers, creatives and pages until the numbers hold.</p>
         </div>
         <div class="card">
-          <p class="kicker">Days 61–90</p>
-          <h3>Scale</h3>
-          <p>We put budget behind what works and turn it into a growth engine you can rely on.</p>
+          <p class="kicker" data-i18n="step3.kicker">Days 61–90</p>
+          <h3 data-i18n="step3.title">Scale</h3>
+          <p data-i18n="step3.text">We put budget behind what works and turn it into a growth engine you can rely on.</p>
         </div>
       </div>
     </section>
 
     <section id="apply">
       <div class="card cta">
-        <h2>Apply for a <span class="grad">Growth Audit.</span></h2>
-        <p>Tell us where your business stands. If we're a fit, we'll come back with a plan for your next 90 days.</p>
-        <p class="limit">We strictly cap our client onboardings per quarter to guarantee direct execution.</p>
+        <h2 data-i18n-html="apply.title">Apply for a <span class="grad">Growth Audit.</span></h2>
+        <p data-i18n="apply.lead">Tell us where your business stands. If we're a fit, we'll come back with a plan for your next 90 days.</p>
+        <p class="limit" data-i18n="apply.limit">We strictly cap our client onboardings per quarter to guarantee direct execution.</p>
         <form id="contact-form" class="contact-form">
           <div class="field">
-            <label for="name">Name</label>
+            <label for="name" data-i18n="form.name">Name</label>
             <input type="text" id="name" name="name" required maxlength="200" autocomplete="name">
           </div>
           <div class="field">
-            <label for="email">E-mail</label>
+            <label for="email" data-i18n="form.email">E-mail</label>
             <input type="email" id="email" name="email" required maxlength="200" autocomplete="email">
           </div>
           <div class="field">
-            <label for="business">Type of business</label>
-            <input type="text" id="business" name="business" required maxlength="200" placeholder="e.g. clinic, physiotherapy, aesthetics, consulting">
+            <label for="business" data-i18n="form.business">Type of business</label>
+            <input type="text" id="business" name="business" required maxlength="200" placeholder="e.g. clinic, physiotherapy, aesthetics, consulting" data-i18n-placeholder="form.business.ph">
           </div>
           <div class="field">
-            <label for="channels">How do new clients find you today?</label>
+            <label for="channels" data-i18n="form.channels">How do new clients find you today?</label>
             <textarea id="channels" name="channels" required maxlength="2000" rows="2"></textarea>
           </div>
           <div class="field">
-            <label for="ads">Are you running ads today?</label>
+            <label for="ads" data-i18n="form.ads">Are you running ads today?</label>
             <select id="ads" name="ads" required>
-              <option value="" selected disabled>Choose one</option>
-              <option>No</option>
-              <option>Yes, under €1k a month</option>
-              <option>Yes, over €1k a month</option>
-              <option>Not sure</option>
+              <option value="" selected disabled data-i18n="form.ads.choose">Choose one</option>
+              <option value="No" data-i18n="form.ads.no">No</option>
+              <option value="Yes, under €1k a month" data-i18n="form.ads.under">Yes, under €1k a month</option>
+              <option value="Yes, over €1k a month" data-i18n="form.ads.over">Yes, over €1k a month</option>
+              <option value="Not sure" data-i18n="form.ads.unsure">Not sure</option>
             </select>
           </div>
           <div class="field">
-            <label for="goal">Primary business goal for the next 90 days</label>
+            <label for="goal" data-i18n="form.goal">Primary business goal for the next 90 days</label>
             <textarea id="goal" name="goal" required maxlength="2000" rows="3"></textarea>
           </div>
           <div class="field">
-            <label for="message">Anything else we should know? <span class="optional">(optional)</span></label>
+            <label for="message" data-i18n-html="form.message">Anything else we should know? <span class="optional">(optional)</span></label>
             <textarea id="message" name="message" maxlength="5000" rows="4"></textarea>
           </div>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAADGUHe7slzg-gxzC" data-theme="dark"></div>
-          <button type="submit" class="btn primary">Apply for a Growth Audit</button>
+          <button type="submit" class="btn primary" data-i18n="form.submit">Apply for a Growth Audit</button>
           <p class="form-feedback" id="form-feedback" role="status" hidden></p>
         </form>
       </div>
@@ -132,6 +134,7 @@
   </main>
 
   <footer>© 2026 After Six · Digital Marketing</footer>
+  <script src="/aftersix/i18n.js"></script>
   <script>
     const form = document.getElementById('contact-form');
     const feedback = document.getElementById('form-feedback');
@@ -161,7 +164,7 @@
       const token   = form.querySelector('[name="cf-turnstile-response"]')?.value;
 
       if (!token) {
-        showFeedback('Please wait for the security check to finish, then try again.', 'error');
+        showFeedback(t('form.wait', 'Please wait for the security check to finish, then try again.'), 'error');
         return;
       }
 
@@ -183,6 +186,7 @@
               <p><strong>How new clients find them:</strong><br>${escapeHtml(channels).replace(/\n/g, '<br>')}</p>
               <p><strong>Running ads today:</strong> ${escapeHtml(ads)}</p>
               <p><strong>Primary goal (next 90 days):</strong><br>${escapeHtml(goal).replace(/\n/g, '<br>')}</p>
+              <p><strong>Page language:</strong> ${document.documentElement.lang.toUpperCase()}</p>
               <p><strong>Anything else:</strong><br>${escapeHtml(message || '—').replace(/\n/g, '<br>')}</p>
             `,
             turnstileToken: token,
@@ -190,14 +194,14 @@
         });
         if (res.ok) {
           form.reset();
-          showFeedback("Application received. We'll review it and get back to you soon.", 'success');
+          showFeedback(t('form.sent', "Application received. We'll review it and get back to you soon."), 'success');
         } else if (res.status === 429) {
-          showFeedback('Too many messages from this connection. Please try again later.', 'error');
+          showFeedback(t('form.toomany', 'Too many messages from this connection. Please try again later.'), 'error');
         } else {
-          showFeedback('Something went wrong. Please try again.', 'error');
+          showFeedback(t('form.error', 'Something went wrong. Please try again.'), 'error');
         }
       } catch {
-        showFeedback('Connection error. Please try again.', 'error');
+        showFeedback(t('form.offline', 'Connection error. Please try again.'), 'error');
       } finally {
         btn.disabled = false;
         // Turnstile tokens are single-use
