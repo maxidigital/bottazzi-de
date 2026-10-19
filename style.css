@@ -244,6 +244,17 @@ a:hover { color: var(--accent); }
   text-transform: uppercase;
   color: var(--brand-2);
 }
+.cat {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  letter-spacing: 0.1em;
+}
+.cat.eng { color: var(--brand-3); }
+.cat.ai { color: var(--brand-1); }
+.cat.tools { color: var(--brand-4); }
 .projects h3 { margin: 0 0 0.5rem; font-size: 1.5rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
 .projects h3 a { text-decoration: none; }
 .projects p { margin: 0; color: var(--muted); }
