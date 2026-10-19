@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freediving Courses — Maximiliano Bottazzi</title>
+  <meta name="description" content="Course operations for a freediving school in Mallorca, run from a Telegram bot.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>Freediving Courses<span>.</span></h1>
+    <p class="lead">Course operations for a freediving school in Mallorca, run from a Telegram bot.</p>
+    <p class="links">
+      <!-- GitHub: add the repository link once it is public -->
+    </p>
+
+    <div class="thumb shot" aria-hidden="true"><span>≈</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>A freediving school runs many small courses, each with its own students, dates, places and paperwork. This bot turns the school’s Google Calendar into an operations tool: it lists upcoming courses and their students, collects the final details of each course day, sends course information and reminders to students by e-mail, and pings the instructors every evening about anything that still needs attention.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li>Java service with the Telegram Bot API as the interface.</li>
+        <li>Google Calendar as the source of truth for courses; Google Sheets and Contacts for students and new enquiries.</li>
+        <li>Transactional e-mail through Mailjet, with delivery events fed back into the bot.</li>
+        <li>Scheduled jobs for daily reminders and second-day follow-ups.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>Java · Telegram Bot API · Google Calendar, Sheets &amp; Contacts APIs · Mailjet · Docker</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Console — Maximiliano Bottazzi</title>
+  <meta name="description" content="Multi-track audio playback for live performances, from building the set to running the show.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>Audio Console<span>.</span></h1>
+    <p class="lead">Multi-track audio playback for live performances, from building the set to running the show.</p>
+    <p class="links">
+      <!-- GitHub: add the repository link once it is public -->
+    </p>
+
+    <div class="thumb shot" aria-hidden="true"><span>♫</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>Live performances need sound cues that start, overlap and fade on time. Audio Console covers the whole workflow in the browser: upload an audio library, arrange tracks on a timeline with cues and fade-ins/outs, try them on a live mixer with up to four channels, and run the performance from a player built for the stage, with cue navigation and per-track mute.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li>Spring Boot backend with JPA for libraries, sets, tracks and cues, and FFmpeg for audio processing.</li>
+        <li>React frontend with four views: library, mixer, timeline editor and performance player.</li>
+        <li>Packaged as a single Docker image: the frontend is embedded in the Spring Boot JAR.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>React · Vite · Spring Boot 3 · Java 17 · JPA · FFmpeg · Docker · Railway</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>

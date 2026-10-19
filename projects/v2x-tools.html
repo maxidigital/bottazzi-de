@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V2X Tools · ASN1Click — Maximiliano Bottazzi</title>
+  <meta name="description" content="A platform for ASN.1 and V2X (connected-vehicle) messages: convert them in the browser, manage the modules behind them, and make both available to AI assistants.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>V2X Tools · ASN1Click<span>.</span></h1>
+    <p class="lead">A platform for ASN.1 and V2X (connected-vehicle) messages: convert them in the browser, manage the modules behind them, and make both available to AI assistants.</p>
+    <p class="links">
+      <a href="https://v2x.tools">v2x.tools →</a>
+      <a href="https://asn1click.com">asn1click.com →</a>
+      <!-- GitHub: add the repository link once it is public -->
+    </p>
+
+    <div class="thumb shot" aria-hidden="true"><span>V2X</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>V2X messages — the ones vehicles and road infrastructure exchange — are defined in ASN.1, a dense specification language. V2X Tools gives engineers a public converter to encode, decode, generate and convert these messages, and ASN1Click adds a repository where users and organisations upload, browse and validate their own ASN.1 modules.</p>
+    </section>
+
+    <section>
+      <h2>How AI is used</h2>
+      <p>The repository digests every module into a structured <strong>element index</strong>: about 1,450 elements across 26 modules, each with its type, named values, constraints, fields and annotations, stored as queryable JSONB in PostgreSQL.</p>
+      <p>This index is the knowledge base for an <strong>MCP server</strong>, so assistants such as Claude can search message types, explain what a field means and work with real data. Public and internal views are separated, and the AI can write its own enrichment annotations back into the index.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li><strong>Frontend</strong> — the public converter (v2x.tools) and the account app (app.asn1click.com), both React + TypeScript single-page apps behind Caddy.</li>
+        <li><strong>Hub</strong> — the public entry point: resolves references, loads and converts through the engine, and owns caching.</li>
+        <li><strong>Engine</strong> — the codec engine: loads a digested module tree (content-addressed) and runs convert / generate.</li>
+        <li><strong>Repo</strong> — the ASN.1 authority: stores modules, parses them into trees, serves the element index and validates.</li>
+        <li><strong>Users</strong> — the identity provider: Google sign-in, RS256 JWTs with JWKS, organisations, invite codes and central single sign-on.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>React · TypeScript · Vite · Tailwind · Spring Boot 3 · Java 17 · PostgreSQL · Caddy · Docker · Railway · MCP</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>

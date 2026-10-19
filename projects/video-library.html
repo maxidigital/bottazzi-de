@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Library — Maximiliano Bottazzi</title>
+  <meta name="description" content="A video library and e-learning platform for training material, designed for the phone and easy to share.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>Video Library<span>.</span></h1>
+    <p class="lead">A video library and e-learning platform for training material, designed for the phone and easy to share.</p>
+    <p class="links">
+      <a href="https://ilm-media.bottazzi.de">ilm-media.bottazzi.de →</a>
+      <!-- GitHub: add the repository link once it is public -->
+    </p>
+
+    <div class="thumb shot" aria-hidden="true"><span>▶</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>Training courses often leave their material scattered across dozens of YouTube playlists. Video Library organises it as courses → modules → lessons → videos, so anyone can find and rewatch a specific session from their phone — and share it with people who never took the course.</p>
+    </section>
+
+    <section>
+      <h2>How AI is used</h2>
+      <p>Importing a module starts from a raw YouTube playlist. An LLM receives the video titles and returns a structured module as JSON: it groups the videos into lessons using dates, numbering and parts found in the titles, keeps the right order, and cleans each title without inventing content.</p>
+      <p>To keep the course consistent, the prompt includes an existing module as a style example. The result is shown as a proposal to review before saving, and if the AI is unavailable the import still works, just unsorted.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li>Spring Boot backend with the YouTube Data API for playlists and the OpenAI API for sorting.</li>
+        <li>React frontend, mobile-first, with resizable panels on desktop.</li>
+        <li>Roles for administrators and viewers; e-mail notifications.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>React · Spring Boot · Java 17 · YouTube Data API · OpenAI · Docker · Railway</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>

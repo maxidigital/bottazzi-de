@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared Assets — Maximiliano Bottazzi</title>
+  <meta name="description" content="Asset management for jointly owned property: income, expenses and receipts in one place, with a live balance for every co-owner.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>Shared Assets<span>.</span></h1>
+    <p class="lead">Asset management for jointly owned property: income, expenses and receipts in one place, with a live balance for every co-owner.</p>
+    <p class="links">
+      <a href="https://sucesion.bottazzi.de">sucesion.bottazzi.de →</a>
+      <!-- GitHub: add the repository link once it is public -->
+    </p>
+
+    <div class="thumb shot" aria-hidden="true"><span>€</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>When several people own something together, one of them usually does the bookkeeping and everyone else wants to see where the money goes. Shared Assets lets the administrator record each movement from their phone — with a photo or PDF of the receipt — while the other co-owners get a read-only view of the transactions and the balance.</p>
+    </section>
+
+    <section>
+      <h2>How AI is used</h2>
+      <p>Co-owners can <strong>ask the books a question in plain language</strong> — “how much did we spend on the office this year?”, “compare repairs and taxes”.</p>
+      <p>The design rule is <em>the AI interprets, the code calculates</em>. The model never sees the full table and never adds up numbers itself: through <strong>function calling</strong> it turns the question into query parameters, the backend filters the data and computes the exact figures, and the model writes the answer. Comparisons run as several rounds of tool calls. The result: natural answers without hallucinated numbers.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li>No database of its own: every movement is a row in a shared Google Sheet, and receipts live in a Google Drive folder.</li>
+        <li>Spring Boot backend with Google Sheets and Drive APIs; OpenAI for the assistant.</li>
+        <li>React frontend, mobile-first, with separate roles for the administrator and the co-owners.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>React · Spring Boot · Java 17 · Google Sheets &amp; Drive APIs · OpenAI function calling · Docker · Railway</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>
