@@ -183,6 +183,9 @@ h1 {
   margin: 1.5rem 0 0;
   max-width: 42rem;
   font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
   color: var(--muted);
 }
 .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
@@ -212,9 +215,8 @@ h2 {
 
 /* Glass cards */
 .grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
-.grid.steps { grid-template-columns: repeat(4, 1fr); }
-@media (max-width: 60rem) { .grid, .grid.steps { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 40rem) { .grid, .grid.steps { grid-template-columns: 1fr; } }
+.grid.steps, .grid.layers { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 60rem) { .grid, .grid.steps, .grid.layers { grid-template-columns: 1fr; } }
 .card {
   position: relative;
   overflow: hidden;
@@ -272,6 +274,21 @@ h2 {
 .cta p { max-width: 36rem; margin: 0 auto; }
 .cta .actions { justify-content: center; }
 
+/* Layer lists, limit note */
+.card ul.points { margin: 0.75rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+.card ul.points li { padding: 0.2rem 0; }
+.card ul.points li::marker { color: var(--lime); }
+.card h3 { font-size: 1.6rem; }
+.cta .limit {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--lime) 35%, transparent);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--lime);
+}
+
 /* Contact form */
 .contact-form { max-width: 34rem; margin: 2.5rem auto 0; text-align: left; }
 .field { margin-bottom: 1.25rem; }
@@ -284,7 +301,7 @@ h2 {
   text-transform: uppercase;
   color: var(--muted);
 }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%;
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--line);
@@ -293,11 +310,14 @@ h2 {
   color: var(--fg);
   font: inherit;
 }
-.field input:focus, .field textarea:focus {
+.field input:focus, .field textarea:focus, .field select:focus {
   outline: 2px solid color-mix(in oklab, var(--brand-2) 60%, transparent);
   outline-offset: 1px;
 }
 .field textarea { resize: vertical; }
+.field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 1.15rem) 50%, calc(100% - 0.8rem) 50%; background-size: 0.35rem 0.35rem; background-repeat: no-repeat; }
+.field select option { background: var(--bg); color: var(--fg); }
+.optional { text-transform: none; letter-spacing: 0; opacity: 0.7; }
 .cf-turnstile { margin-bottom: 1.25rem; }
 .contact-form .btn { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
 .contact-form .btn:disabled { opacity: 0.5; cursor: not-allowed; }
