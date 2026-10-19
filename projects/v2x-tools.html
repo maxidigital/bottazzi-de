@@ -45,13 +45,13 @@
         <li><strong>Hub</strong> — the public entry point: resolves references, loads and converts through the engine, and owns caching.</li>
         <li><strong>Engine</strong> — the codec engine, built on the V2X Framework codec: loads a digested module tree (content-addressed) and runs convert / generate.</li>
         <li><strong>Repo</strong> — the ASN.1 authority: stores modules, parses them into trees, serves the element index and validates.</li>
-        <li><strong>Users</strong> — the identity provider: Google sign-in, RS256 JWTs with JWKS, organisations, invite codes and central single sign-on.</li>
+        <li><strong>Users</strong> — the identity provider: sign-in with Google and GitHub over OAuth 2.0 / OpenID Connect (authorization-code flow, HMAC-signed state against CSRF), RS256 JWTs with JWKS, organisations, invite codes and central single sign-on.</li>
       </ul>
     </section>
 
     <section>
       <h2>Stack</h2>
-      <p>React · TypeScript · Vite · Tailwind · Spring Boot 3 · Java 17 · PostgreSQL · Caddy · Docker · Railway · MCP</p>
+      <p>React · TypeScript · Vite · Tailwind · Spring Boot 3 · Java 17 · PostgreSQL · OAuth 2.0 / OpenID Connect · JWT · Caddy · Docker · Railway · MCP</p>
     </section>
 
   </main>

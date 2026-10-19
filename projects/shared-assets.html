@@ -40,14 +40,14 @@
       <h2>How it is built</h2>
       <ul class="points">
         <li>No database of its own: every movement is a row in a shared Google Sheet, and receipts live in a Google Drive folder.</li>
-        <li>Spring Boot backend with Google Sheets and Drive APIs; OpenAI for the assistant.</li>
+        <li>Spring Boot backend with Google Sheets and Drive APIs; Drive access through an OAuth 2.0 offline grant (refresh token, least-privilege <code>drive.file</code> scope); OpenAI for the assistant.</li>
         <li>React frontend, mobile-first, with separate roles for the administrator and the co-owners.</li>
       </ul>
     </section>
 
     <section>
       <h2>Stack</h2>
-      <p>React · Spring Boot · Java 17 · Google Sheets &amp; Drive APIs · OpenAI function calling · Docker · Railway</p>
+      <p>React · Spring Boot · Java 17 · Google Sheets &amp; Drive APIs · OAuth 2.0 · OpenAI function calling · Docker · Railway</p>
     </section>
 
   </main>

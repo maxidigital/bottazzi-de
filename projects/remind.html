@@ -40,14 +40,14 @@
       <h2>How it is built</h2>
       <ul class="points">
         <li>Started as a Telegram bot and rebuilt as a web app with its own interface.</li>
-        <li>Spring Boot backend: Google sign-in, per-user Google Sheets storage, Whisper transcription.</li>
+        <li>Spring Boot backend: Google sign-in over OAuth 2.0 / OpenID Connect (authorization-code flow), per-user Google Sheets storage with the user's own grant, Whisper transcription.</li>
         <li>React frontend with a local cache of session and notes, so the app opens instantly without a loading screen.</li>
       </ul>
     </section>
 
     <section>
       <h2>Stack</h2>
-      <p>React · TypeScript · Spring Boot · Java 17 · OpenAI Whisper · Google OAuth · Google Sheets API · Docker · Railway</p>
+      <p>React · TypeScript · Spring Boot · Java 17 · OpenAI Whisper · OAuth 2.0 / OpenID Connect · Google Sheets API · Docker · Railway</p>
     </section>
 
   </main>
