@@ -17,7 +17,7 @@
   </header>
   <main class="page project">
     <h1>V2X Tools · ASN1Click<span>.</span></h1>
-    <p class="lead">A platform for ASN.1 and V2X (connected-vehicle) messages: convert them in the browser, manage the modules behind them, and make both available to AI assistants.</p>
+    <p class="lead">A platform for ASN.1 and V2X (connected-vehicle) messages: convert them in the browser, manage the modules behind them, and, soon, make both available to AI assistants.</p>
     <p class="links">
       <a href="https://v2x.tools">v2x.tools →</a>
       <a href="https://asn1click.com">asn1click.com →</a>
@@ -29,12 +29,13 @@
     <section>
       <h2>What it does</h2>
       <p>V2X messages — the ones vehicles and road infrastructure exchange — are defined in ASN.1, a dense specification language. V2X Tools gives engineers a public converter to encode, decode, generate and convert these messages, and ASN1Click adds a repository where users and organisations upload, browse and validate their own ASN.1 modules.</p>
+      <p>It is the web version of the <a href="/projects/v2x-framework.html">V2X Framework</a>, the Java framework I built at the German Aerospace Center, and uses its codec.</p>
     </section>
 
     <section>
       <h2>How AI is used</h2>
       <p>The repository digests every module into a structured <strong>element index</strong>: about 1,450 elements across 26 modules, each with its type, named values, constraints, fields and annotations, stored as queryable JSONB in PostgreSQL.</p>
-      <p>This index is the knowledge base for an <strong>MCP server</strong>, so assistants such as Claude can search message types, explain what a field means and work with real data. Public and internal views are separated, and the AI can write its own enrichment annotations back into the index.</p>
+      <p>This index is the knowledge base for the upcoming <strong>MCP version</strong>, so assistants such as Claude can search message types, explain what a field means and work with real data. Public and internal views are separated, and the AI can write its own enrichment annotations back into the index.</p>
     </section>
 
     <section>
@@ -42,7 +43,7 @@
       <ul class="points">
         <li><strong>Frontend</strong> — the public converter (v2x.tools) and the account app (app.asn1click.com), both React + TypeScript single-page apps behind Caddy.</li>
         <li><strong>Hub</strong> — the public entry point: resolves references, loads and converts through the engine, and owns caching.</li>
-        <li><strong>Engine</strong> — the codec engine: loads a digested module tree (content-addressed) and runs convert / generate.</li>
+        <li><strong>Engine</strong> — the codec engine, built on the V2X Framework codec: loads a digested module tree (content-addressed) and runs convert / generate.</li>
         <li><strong>Repo</strong> — the ASN.1 authority: stores modules, parses them into trees, serves the element index and validates.</li>
         <li><strong>Users</strong> — the identity provider: Google sign-in, RS256 JWTs with JWKS, organisations, invite codes and central single sign-on.</li>
       </ul>

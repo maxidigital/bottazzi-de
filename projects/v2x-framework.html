@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V2X Framework — Maximiliano Bottazzi</title>
+  <meta name="description" content="A Java framework for sending and receiving V2X messages through roadside and on-board units, built at the German Aerospace Center (DLR).">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a855f7'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='system-ui,sans-serif' font-size='60' font-weight='700' text-anchor='middle' fill='%23141625'>B</text></svg>">
+  <link rel="stylesheet" href="/style.css?v=2">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <header class="site-header">
+    <a class="brand" href="/">bottazzi.de</a>
+    <nav><a href="/#projects">Projects</a><a href="/contact.html">Contact</a></nav>
+  </header>
+  <main class="page project">
+    <h1>V2X Framework<span>.</span></h1>
+    <p class="lead">A Java framework for sending and receiving connected-vehicle messages through roadside and on-board units, built for research at the German Aerospace Center (DLR).</p>
+
+    <div class="thumb shot" aria-hidden="true"><span>RSU</span></div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>Vehicles and traffic infrastructure talk to each other over V2X radio: position and speed, hazard warnings, detected objects, traffic-light phases and intersection maps. Talking to that radio directly means dealing with ASN.1 encodings, GeoNetworking and each hardware vendor's own interface.</p>
+      <p>The V2X Framework hides all of that. Its transceivers sit between the communication unit and the research applications: they decode incoming messages, translate them to the format each client needs (XML, JSON or a compact binary format) and encode outgoing ones for the radio. Clients can be Java programs or ROS nodes, connected over UDP, TCP or REST. Every message in and out is logged and can be forwarded to a backend for later analysis.</p>
+      <p>Its codec now also powers <a href="/projects/v2x-tools.html">V2X Tools</a>, the web version of the framework.</p>
+    </section>
+
+    <section>
+      <h2>How it is built</h2>
+      <ul class="points">
+        <li>Transceivers with pluggable gates and forwarders, configured per use case from a plain configuration file.</li>
+        <li>A hardware layer for communication units from several vendors, including Cohda, NEC Linkbird and Siemens, so the same application runs on different roadside units.</li>
+        <li>Message libraries from the ETSI standards in several versions: CAM, DENM, CPM, MAPEM/SPATEM, SREM, MCM and the ITS containers, with UPER encoding and XML/JSON views.</li>
+        <li>WinD, a small definition language with its own lexer, parser and ASN.1 parser, and a code generator that turns message definitions into versioned Maven libraries, ROS 1 and ROS 2 packages (messages and C++ sender/receiver nodes) and Protobuf schemas.</li>
+        <li>A backend subsystem that runs on the roadside unit and forwards every received message, untouched, to a Kafka broker.</li>
+        <li>Tools for field work and testing: message tester, decoder and random message generator, pcap parser, sniffer, GPS tools and a CPM fragmenter.</li>
+        <li>A multi-module Maven build with a GitLab CI pipeline that generates, tests and publishes the libraries.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My role</h2>
+      <p>I designed and wrote the whole framework, including the WinD language and its code generator, and maintained it from 2019 to 2024 at the DLR Institute of Transportation Systems.</p>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>Java 8 · Maven · ASN.1 / UPER · GeoNetworking · ROS 1 &amp; 2 · C++ · Protobuf · Kafka · GitLab CI</p>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Maximiliano Bottazzi · <a href="/">Home</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a></footer>
+</body>
+</html>
