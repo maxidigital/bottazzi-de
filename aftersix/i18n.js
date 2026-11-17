@@ -70,10 +70,11 @@ const DE = {
   'login.tag': 'Kundenportal',
   'login.title': 'Anmelden',
   'login.lead': 'Zugang zu Ihren Kampagnen, Berichten und Ergebnissen.',
-  'login.email': 'E-Mail',
+  'login.user': 'Benutzer',
   'login.password': 'Passwort',
   'login.submit': 'Anmelden',
-  'login.wrong': 'E-Mail oder Passwort ist falsch.',
+  'login.wrong': 'Benutzer oder Passwort ist falsch.',
+  'login.toomany': 'Zu viele Versuche. Bitte versuchen Sie es in 15 Minuten erneut.',
   'login.back': '← Zurück zu After Six',
 };
 
